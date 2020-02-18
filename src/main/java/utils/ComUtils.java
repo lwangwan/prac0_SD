@@ -157,6 +157,26 @@ public class ComUtils {
         BIG_ENNDIAN,
         LITTLE_ENDIAN
     }
+
+
+    /**writeChar and readChar functions*/
+    public void writeChar(char character) throws IOException {
+        byte bytes[] = new byte[1];
+        bytes[0] =  (byte) character;
+
+        dataOutputStream.write( bytes, 0, 1);
+    }
+
+    public char readChar() throws IOException{
+        byte[] bChar;
+        bChar = read_bytes(1);
+        char ch = (char) bChar[0];
+        return ch;
+    }
+    
+   
+    
+    
 }
 
 
